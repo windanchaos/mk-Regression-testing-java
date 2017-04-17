@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://shop.51maike.com.cn/shop/" />
+<title>product_toEditDetail</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">product_toEditDetail</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/shop/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.nav-title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//li[2]/a/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=仓库中（2）</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=编辑详情</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td>_blank</td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.richtxt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.title</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=div.form-group &gt; input.form-control</td>
+	<td>自动回归标题名称</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=图片模块</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.imglist</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=+ 添加一个图片</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=395_catalogName</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;TB2jB6SauTyQeBjSspfXXaI3FXa-394695430.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;TB2b6OqXF_AQeBjSZPhXXXt5pXa-394695430.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;TB2UuHsaxvxQeBjy0FiXXXioXXa-394695430.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;TB2C4WqXF_AQeBjSZFvXXbnKXXa-394695430.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;TB2pUCqXRPzQeBjSZFlXXccIVXa-394695430.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveProductImage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.field-box.currenteditor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='mdListR']/div[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#editmodalbox2 &gt; div.iBody &gt; div.form-group &gt; div.iCheckRegion &gt; div.checkbox &gt; label &gt; input[type=&quot;checkbox&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@type='checkbox'])[5]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='editmodalbox2']/div[3]/div[4]/div/div/label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=交互模块</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.bigcarousel &gt; i.cus-icon.icoPic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=+ 添加一个广告</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=1077_fileCount</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=5</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;439cbda99f1b7d74c961fe9bbe55d252.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;90f2aceff1e21dff4c9fd26825c13e23.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveProductImage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.slideimgs &gt; i.cus-icon.icoPic</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#editmodalbox4 &gt; div.iBody &gt; a.add-option</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;86d73810c8e8c70bdbd6725767d63616.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a[title=&quot;49b9b70bcf502a8430b7c5d4e790cd9b.jpg&quot;] &gt; img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=saveProductImage</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//button[@type='button'])[9]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=item_0</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=商品链接</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=选择</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=商品模块</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.product</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=i.cus-icon.icon-add</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@value='选择'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@value='选择'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=pS-comfirmBtn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='pStyle5'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[@id='editmodalbox5']/div[3]/div[4]/div/label[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=其它模块</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=li.notice</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#editmodalbox6 &gt; div.iBody &gt; div.form-group &gt; input.form-control</td>
+	<td>公告</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>css=#editmodalbox6 &gt; div.iBody &gt; div.form-group &gt; input.form-control</td>
+	<td>公告：有重要信息想要告诉客户？你可以在这发布一条公告哦，如果内容过长，会滚动播放</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn_save_shelveOn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=编辑</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td>_blank</td>
+	<td>30000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=编辑详情</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForPopUp</td>
+	<td>_blank</td>
+	<td>30000</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
