@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.ui.Select;
 
 public class Login {
@@ -16,8 +16,8 @@ public class Login {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    driver = new FirefoxDriver();
-    baseUrl = "http://passpt.51maike.com.cn/login?refer=shop";
+    driver = new ChromeDriver();
+    baseUrl = "https://shop.maike51.com/shop/";
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
@@ -26,10 +26,33 @@ public class Login {
   public void testLogin() throws Exception {
     driver.get(baseUrl);
     driver.findElement(By.id("account")).clear();
-    driver.findElement(By.id("account")).sendKeys("account");
+    driver.findElement(By.id("account")).sendKeys("10191");
     driver.findElement(By.id("password")).clear();
-    driver.findElement(By.id("password")).sendKeys("password");
-    driver.findElement(By.cssSelector("div.btns-box > #login-button")).click();
+    driver.findElement(By.id("password")).sendKeys("miang521");
+    //driver.findElement(By.cssSelector("div.btns-box > #login-button")).click();
+    driver.findElement(By.xpath("//*[@value='登    录']")).click();
+    driver.findElement(By.xpath("//*[text()='商品管理']")).click();
+    driver.findElement(By.xpath("//div[@class='richtxt']")).click();
+    driver.findElement(By.xpath("//div[@class='title']")).click();
+    
+    driver.findElement(By.xpath("//*[text()='图片模块']")).click();
+    driver.findElement(By.xpath("//div[@class='imglist']")).click();
+    
+    driver.findElement(By.xpath("//*[text()='交互模块']")).click();
+    driver.findElement(By.xpath("//div[@class='bigcarousel']")).click();
+    driver.findElement(By.xpath("//div[@class='slideimgs']")).click();
+    driver.findElement(By.xpath("//div[@class='timingimgs']")).click();
+
+    driver.findElement(By.xpath("//*[text()='商品模块']")).click();
+    driver.findElement(By.xpath("//div[@class='product']")).click();
+    driver.findElement(By.xpath("//div[@class='searchprd']")).click();
+
+    driver.findElement(By.xpath("//*[text()='其它模块']")).click();
+    driver.findElement(By.xpath("//div[@class='notice']")).click();
+    driver.findElement(By.xpath("//div[@class='contact']")).click();
+    driver.findElement(By.xpath("//div[@class='auxline']")).click();
+    driver.findElement(By.xpath("//div[@class='auxblank']")).click();
+    
   }
 
   @AfterClass(alwaysRun = true)
