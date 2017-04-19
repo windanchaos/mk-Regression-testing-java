@@ -1,6 +1,9 @@
 package main.test;
 
+import java.util.Random;
+
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.Select;
 
 public class Product_index {
 	private WebDriver driver;
@@ -10,96 +13,64 @@ public class Product_index {
 		this.driver=driver;
 	}
 	public void testProductIndex() throws Exception {
-		driver.get(baseUrl + "/logOut?refer=shop");
-		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("miang521");
-		driver.findElement(By.id("account")).clear();
-		driver.findElement(By.id("account")).sendKeys("57403");
-		driver.findElement(By.cssSelector("div.btns-box > #login-button")).click();
-		driver.findElement(By.cssSelector("div.nav-title")).click();
-		driver.findElement(By.xpath("//li[2]/a/div")).click();
+		driver.get("https://shop.maike51.com/shop/");
+		driver.findElement(By.xpath("//*[text()='商品管理']")).click();
+		driver.findElement(By.xpath("//*[text()='商品仓库']")).click();
 		driver.findElement(By.id("addProduct")).click();
+		
 		driver.findElement(By.id("item_2")).click();
+		
 		driver.findElement(By.id("next")).click();
+		//商品名及介绍
 		driver.findElement(By.id("productName")).clear();
 		driver.findElement(By.id("productName")).sendKeys("回归测试case");
 		driver.findElement(By.id("shortDes")).clear();
-		driver.findElement(By.id("shortDes")).sendKeys("回归测试case");
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
+		driver.findElement(By.id("shortDes")).sendKeys("商城测试商品，请勿购买！！");
+		//下拉框选择分组
+		Select select = new Select(driver.findElement(By.id("selectGroups")));
+		Random r=new Random();
+		int i=r.nextInt(7)+1;
+		select.selectByIndex(i);
+		//商品编码
+		
 		driver.findElement(By.id("productCode")).clear();
 		driver.findElement(By.id("productCode")).sendKeys("000212");
+		//商品规格一
 		driver.findElement(By.id("addSpec")).click();
 		driver.findElement(By.xpath("//button[@onclick='openSelSpecWindow(this);']")).click();
 		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span")).click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
+		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span")).sendKeys("净重");
 		driver.findElement(By.id("toAddSku")).click();
-		driver.findElement(By.xpath("//button[@onclick='openSelSpecWindow(this);']")).click();
-		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span/span")).click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
-		driver.findElement(By.id("toAddSku")).click();
-		driver.findElement(By.linkText("+添加")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("//button[@onclick='closeSkuValue();']")).click();
-		driver.findElement(By.cssSelector("div.delSpec > img")).click();
+		
+		driver.findElement(By.xpath("//*[@id=‘addSpecV_0’]")).click();
+		driver.wait(500);;
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).sendKeys("500g");
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[2]/button")).click();
+		driver.findElement(By.xpath("//*[@id=‘addSpecV_0’]")).click();
+		driver.wait(500);
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).sendKeys("1000g");
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[2]/button")).click();
+		//商品规格二
 		driver.findElement(By.id("addSpec")).click();
-		driver.findElement(By.xpath("//button[@onclick='openSelSpecWindow(this);']")).click();
+		driver.findElements(By.xpath("//button[@onclick='openSelSpecWindow(this);']")).get(1).click();
 		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span/span")).click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
+		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span")).sendKeys("颜色");
 		driver.findElement(By.id("toAddSku")).click();
-		driver.findElement(By.linkText("+添加")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div/span/span/span/span"))
-				.click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
-		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
-		driver.findElement(By.id("addSpecV_1")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div/span/span/span")).click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
-		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
-		driver.findElement(By.id("addSpec")).click();
-		driver.findElement(By.xpath("(//button[@onclick='openSelSpecWindow(this);'])[2]")).click();
-		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span/span")).click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
-		driver.findElement(By.id("toAddSku")).click();
-		driver.findElement(By.cssSelector("#addSpecV_2 > a.link-primary.noEdit")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).clear();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).sendKeys("红");
-		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
-		driver.findElement(By.cssSelector("#addSpecV_2 > a.link-primary.noEdit")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).clear();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).sendKeys("黄");
-		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
-		driver.findElement(By.cssSelector("#addSpecV_2 > a.link-primary.noEdit")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[55]")).click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[55]")).clear();
-		driver.findElement(By.xpath("(//input[@type='text'])[55]")).sendKeys("红色");
-		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
-		driver.findElement(By.xpath("//div[@id='specD_2']/div[2]/div[2]/img")).click();
-		driver.findElement(By.cssSelector("#specD_2 > div.specV > div.delspecV > img")).click();
-		driver.findElement(By.cssSelector("#addSpecV_2 > a.link-primary.noEdit")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div[2]")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).click();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).clear();
-		driver.findElement(By.xpath("(//input[@type='text'])[39]")).sendKeys("黄色");
-		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
-		driver.findElement(By.cssSelector("#addSpecV_2 > a.link-primary.noEdit")).click();
-		driver.findElement(By.xpath("//div[@id='skuValueWindow']/div/div/fieldset/div/div/span/span/span")).click();
-		driver.findElement(By.cssSelector("li.k-item.k-state-hover")).click();
-		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
+		
+		driver.findElement(By.xpath("//*[@id=‘addSpecV_１’]")).click();
+		driver.wait(500);;
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).sendKeys("红色");
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[2]/button")).click();
+		driver.findElement(By.xpath("//*[@id=‘addSpecV_１’]")).click();
+		driver.wait(500);
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).sendKeys("橙色");
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[2]/button")).click();
+		
+		
 		driver.findElement(By.id("batch_quto")).click();
 		driver.findElement(By.id("batch_quto")).clear();
 		driver.findElement(By.id("batch_quto")).sendKeys("122");
