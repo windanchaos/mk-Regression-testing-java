@@ -29,16 +29,18 @@ public class Product_index {
 		driver.findElement(By.id("shortDes")).clear();
 		driver.findElement(By.id("shortDes")).sendKeys("商城测试商品，请勿购买！！");
 		// 下拉框选择分组
-		Select select = new Select(driver.findElement(By.id("selectGroups")));
-		Random r = new Random();
-		int i = r.nextInt(7) + 1;
-		select.selectByIndex(i);
+//		driver.findElement(By.className("k-multiselect-wrap k-floatwrap")).click();
+//		Select select = new Select(driver.findElement(By.id("selectGroups")));
+//		Random r = new Random();
+//		int i = r.nextInt(7) + 1;
+//		select.selectByIndex(i);
 		// 商品编码
 
 		driver.findElement(By.id("productCode")).clear();
 		driver.findElement(By.id("productCode")).sendKeys("000212");
 		// 商品规格一
 		driver.findElement(By.id("addSpec")).click();
+
 		driver.findElement(By.xpath("//button[@onclick='openSelSpecWindow(this);']")).click();
 		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span")).click();
 		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span"))
@@ -47,7 +49,6 @@ public class Product_index {
 
 		driver.findElement(By.xpath("//*[@id=‘addSpecV_0’]")).click();
 		driver.wait(500);
-		;
 		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
 		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input"))
 				.sendKeys("500g");
