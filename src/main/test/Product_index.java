@@ -5,7 +5,7 @@ import java.util.Random;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.ClickAction;
 import org.openqa.selenium.support.ui.Select;
-
+import main.common.*;
 public class Product_index {
 	private WebDriver driver;
 	private String baseUrl;
@@ -41,67 +41,71 @@ public class Product_index {
 		// 商品规格一
 		driver.findElement(By.id("addSpec")).click();
 
-		driver.findElement(By.xpath("//button[@onclick='openSelSpecWindow(this);']")).click();
-		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span")).click();
-		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span"))
-				.sendKeys("净重");
-		driver.findElement(By.id("toAddSku")).click();
-
-		driver.findElement(By.xpath("//*[@id=‘addSpecV_0’]")).click();
-		driver.wait(500);
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
+		//规格名称
+		//driver.findElement(By.xpath("//div[@onlick='openSelSpecWindow(this)']")).click();
+		driver.findElement(By.xpath("//*[text()='添加规格']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='addSkuWindow']/div/div/fieldset[1]/div/div/span/span/input")).sendKeys("净重");
+		driver.findElement(By.id("toAddSku")).click();//*[@id="productInfo"]/div[4]/div[2]/div[1]/div[1]/div[1]/button
+		//规格
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='addSpecV_0']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input"))
 				.sendKeys("500g");
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[2]/button")).click();
-		driver.findElement(By.xpath("//*[@id=‘addSpecV_0’]")).click();
-		driver.wait(500);
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
+		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//*[@id='addSpecV_0']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input"))
 				.sendKeys("1000g");
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[2]/button")).click();
+		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
 		// 商品规格二
+		Thread.sleep(1000);
 		driver.findElement(By.id("addSpec")).click();
-		driver.findElements(By.xpath("//button[@onclick='openSelSpecWindow(this);']")).get(1).click();
-		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span/span")).click();
-		driver.findElement(By.xpath("//div[@id='addSkuWindow']/div/div/fieldset/div/div/span/span/span"))
-				.sendKeys("颜色");
+		driver.findElements(By.xpath("//*[text()='添加规格']")).get(1).click();
+		Thread.sleep(1000);
+		//规格名称
+		driver.findElement(By.xpath("//*[@id='addSkuWindow']/div/div/fieldset[1]/div/div/span/span/input")).sendKeys("颜色");
 		driver.findElement(By.id("toAddSku")).click();
-
-		driver.findElement(By.xpath("//*[@id=‘addSpecV_１’]")).click();
-		driver.wait(500);
-		
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input"))
-				.sendKeys("红色");
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[2]/button")).click();
-		driver.findElement(By.xpath("//*[@id=‘addSpecV_１’]")).click();
-		driver.wait(500);
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input")).click();
+		Thread.sleep(1000);
+		//规格
+		driver.findElement(By.xpath("//*[@id='addSpecV_1']")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input"))
 				.sendKeys("橙色");
-		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[2]/button")).click();
-
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//*[@id='addSpecV_1']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='skuValueWindow']/div/div/fieldset/div/div[1]/span/span/input"))
+				.sendKeys("红色");
+		driver.findElement(By.xpath("//button[@onclick='addSkuValue();']")).click();
+		
 		//设置sku
 		//滚屏
-		((JavascriptExecutor) driver).executeAsyncScript("$('.mk-product-body').scrollTop(1000)");
-		((JavascriptExecutor) driver).executeAsyncScript("document.getElementById('batch_quto').style='display: inline-block; visibility: visible;'");
+		Driver_mothds.runscript(driver, "$('.mk-product-body').scrollTop(700)");
+		Driver_mothds.runscript(driver, "document.getElementById('batch_quto').style='display: inline-block; visibility: visible;'");
 		driver.findElement(By.id("batch_quto")).sendKeys("122");
-		((JavascriptExecutor) driver).executeAsyncScript("document.getElementById('batch_quto').style='display: none; visibility: visible;'");
-		driver.wait(500);
-		driver.findElement(By.xpath("//*[@id='quto_yes')")).click();
-		((JavascriptExecutor) driver).executeAsyncScript("document.getElementById('batch_sale').style='display: inline-block; visibility: visible;'");
+		Driver_mothds.runscript(driver, "document.getElementById('batch_quto').style='display: none; visibility: visible;'");
+		Thread.sleep(1000);
+		driver.findElement(By.id("quto_yes")).click();
+		Driver_mothds.runscript(driver, "document.getElementById('batch_sale').style='display: inline-block; visibility: visible;'");
 		driver.findElement(By.id("batch_sale")).sendKeys("0.12");
-		((JavascriptExecutor) driver).executeAsyncScript("document.getElementById('batch_sale').style='display: none; visibility: visible;'");
+		Driver_mothds.runscript(driver, "document.getElementById('batch_sale').style='display: none; visibility: visible;'");
 		driver.findElement(By.id("sale_yes")).click();
-		((JavascriptExecutor) driver).executeAsyncScript("document.getElementById('batch_inventory').style='display: inline-block; visibility: visible;'");
+		Driver_mothds.runscript(driver,"document.getElementById('batch_inventory').style='display: inline-block; visibility: visible;'");
 		driver.findElement(By.id("batch_inventory")).sendKeys("021");
-		((JavascriptExecutor) driver).executeAsyncScript("document.getElementById('batch_inventory').style='display: none; visibility: visible;'");
+		Driver_mothds.runscript(driver,"document.getElementById('batch_inventory').style='display: none; visibility: visible;'");
 		driver.findElement(By.id("inventory_yes")).click();
 		driver.findElement(By.id("batch_skuCode")).sendKeys("21214");
 		driver.findElement(By.id("code_yes")).click();
-		driver.wait(500);
+		Thread.sleep(1000);
 		//sku 图片设置
-		((JavascriptExecutor) driver).executeAsyncScript("$('#chkSkuImg').click()");
+		Driver_mothds.runscript(driver,"$('#chkSkuImg').click()");
 		driver.findElement(By.xpath("//*[@id='skuImgTable']/tbody/tr/td/div[1]/button")).click();
 		
 		driver.findElement(By.id("chkSkuImg")).click();
