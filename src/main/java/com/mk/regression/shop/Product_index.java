@@ -1,11 +1,11 @@
-package main.test;
+package com.mk.regression.shop;
 
 import java.util.Random;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.ClickAction;
 import org.openqa.selenium.support.ui.Select;
-import main.common.*;
+
 public class Product_index {
 	private WebDriver driver;
 	private String baseUrl;

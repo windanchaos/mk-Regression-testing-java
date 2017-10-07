@@ -1,4 +1,4 @@
-package main.common;
+package com.mk.regression.shop;
 
 import java.io.File;
 import java.util.Random;

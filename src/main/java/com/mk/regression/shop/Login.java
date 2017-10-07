@@ -1,4 +1,4 @@
-package main.test;
+package com.mk.regression.shop;
 
 import org.openqa.selenium.*;
 
